@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, fonts, spacing } from "../../App.styled";
+import { colors, spacing } from "../../App.styled";
 import { Link } from "react-router-dom";
 
 export const NavigationStyled = styled.div`

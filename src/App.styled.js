@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const fonts = {
   Raleway: "'Raleway', sans-serif",
@@ -13,6 +13,7 @@ export const colors = {
   dark600: "#4E4E4E",
   dark400: "#9D9D9F",
   light200: "#F7F7F7",
+  light400: "#FCFCFC",
 };
 
 export const spacing = {

@@ -1,5 +1,7 @@
 import React from "react";
 import { FooterStyled } from "./Footer.styled";
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,18 +13,20 @@ const Footer = () => {
       <div className="footer_links">
         <div className="footer_links__contact">
           <h2>Contact Us</h2>
-          <div className="footer_links__contact socials">
-            <i>Facebook Logo HERE</i>
-            <i>IG Logo HERE</i>
-            <i>TWITTER Logo HERE</i>
+          <div className="footer_links__contact__socials">
+            <BsFacebook size="1.5em" className="fb" />
+            <BsInstagram size="1.5em" className="ig" />
+            <BsTwitter size="1.5em" className="tw" />
           </div>
-          <a>mail@holidaze.com</a>
+          <a href="mailto:mail@holidaze.com">mail@holidaze.com</a>
         </div>
         <div className="footer_links__helpful">
           <h2>Helpful Links</h2>
-          <a>About Us</a>
-          <a>Contact</a>
-          <button>Book</button>
+          <div className="footer_links__helpful__links">
+            <Link to="/aboutus">About Us</Link>
+            <Link to="contact">Contact</Link>
+            <button>Book</button>
+          </div>
         </div>
       </div>
     </FooterStyled>

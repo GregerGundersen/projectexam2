@@ -13,6 +13,9 @@ const Navigation = () => {
         <LinkStyled className="navigaiton_right__link" to="/">
           Home
         </LinkStyled>
+        <LinkStyled className="navigaiton_right__link" to="/hotels">
+          Hotels
+        </LinkStyled>
         <LinkStyled className="navigaiton_right__link" to="/contact">
           Contact Us
         </LinkStyled>
