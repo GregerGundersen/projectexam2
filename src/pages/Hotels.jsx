@@ -1,10 +1,11 @@
 import React from "react";
 import Footer from "../components/Footer/Footer";
+import HotelsList from "../components/Hotels/HotelsList";
 
 const Hotels = () => {
   return (
     <>
-      Test
+      <HotelsList />
       <Footer />
     </>
   );
