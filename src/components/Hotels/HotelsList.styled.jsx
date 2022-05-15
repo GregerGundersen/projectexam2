@@ -7,6 +7,44 @@ export const StyledHotelsList = styled.div`
   justify-content: center;
   gap: ${spacing.space13};
 
+  /* Error and loading styles */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(10%);
+      opacity: 0;
+      scale: 0.75;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  .temporary_centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 50vw;
+
+    p {
+      color: red;
+      font-family: ${fonts.Raleway};
+      margin: ${spacing.space1};
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  #error {
+    animation: 0.35s ease-out 0s 1 slideUp;
+  }
+
+  /* Filter styles */
   .hotels_filters {
     h3 {
       color: ${colors.green400};
@@ -27,6 +65,7 @@ export const StyledHotelsList = styled.div`
     }
   }
 
+  /* Hotel list styles */
   .hotels {
     max-width: 50vw;
 

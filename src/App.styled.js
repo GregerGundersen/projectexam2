@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: ${fonts.Raleway};
            }
 
            body{
@@ -44,11 +45,13 @@ export const GlobalStyle = createGlobalStyle`
                min-height: 50vh ;
            }
 
-    h1,h2,h3,h4,h5 {
+          
+
+    /* h1,h2,h3,h4,h5 {
                font-family: ${fonts.Raleway};
            }
 
     p,span,a{
                font-family: ${fonts.Alice};
-           }
+           } */
 `;

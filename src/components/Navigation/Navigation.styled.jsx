@@ -6,7 +6,7 @@ export const NavigationStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${spacing.space2};
+  margin: ${spacing.space2} ${spacing.space13};
 
   .navigation_left__name {
     color: ${colors.green600};

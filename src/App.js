@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Hotels from "./pages/Hotels";
 import Navigation from "./components/Navigation/Navigation";
 import ContactUs from "./pages/ContactUs";
+import Hotel from "./pages/Hotel";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ function App() {
               <Route path="/hotels" element={<Hotels />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/login" element={<ContactUs />} />
+              <Route path="/hotel" element={<Hotel />} />
             </Routes>
           </Router>
         </AuthProvider>
