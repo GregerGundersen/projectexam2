@@ -66,4 +66,16 @@ export const FooterStyled = styled.footer`
       }
     }
   }
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    .footer_links {
+      flex-direction: column;
+      gap: ${spacing.space10};
+      margin-bottom: ${spacing.space10};
+    }
+  }
 `;

@@ -27,7 +27,7 @@ export const StyledDetails = styled.div`
     }
 
     p {
-      width: 70%;
+      max-width: 50ch;
       margin-top: ${spacing.space2};
     }
   }
@@ -41,5 +41,16 @@ export const StyledDetails = styled.div`
     margin-top: ${spacing.space3};
     justify-self: end;
     cursor: pointer;
+  }
+
+  /* Media queries */
+  @media screen and (max-width: 750px) {
+    margin: 0 ${spacing.space5};
+    .hotel_info {
+      grid-column: 1/3;
+    }
+    button {
+      grid-column: 2/3;
+    }
   }
 `;

@@ -115,8 +115,6 @@ const HotelsList = () => {
               <label htmlFor="hostel">Hostel</label>
             </div>
           </div>
-          {/* <label for="results">Results per page</label>
-          <input type="range" min="3" max="15" id="results" name="results" /> */}
         </div>
         <div className="temporary_centered" id="error">
           <p>
@@ -164,8 +162,6 @@ const HotelsList = () => {
             <input type="checkbox" id="hostel" name="hostel" />
             <label htmlFor="hostel">Hostel</label>
           </div>
-          {/* <label for="results">Results per page</label>
-          <input type="range" min="3" max="15" id="results" name="results" /> */}
         </div>
       </div>
       <div className="hotels">

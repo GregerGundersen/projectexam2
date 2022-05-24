@@ -25,6 +25,7 @@ const Footer = () => {
           <div className="footer_links__helpful__links">
             <Link to="/aboutus">About Us</Link>
             <Link to="contact">Contact</Link>
+            <Link to="/login">Log In</Link>
             <button>Book</button>
           </div>
         </div>

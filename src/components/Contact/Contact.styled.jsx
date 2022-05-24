@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { colors, spacing } from "../../App.styled";
 
 export const StyledContact = styled.div`
-  width: 40vw;
-  min-height: 60vh;
+  min-width: 40%;
+  max-width: 60%;
   margin: 10vh auto;
   padding: ${spacing.space7} ${spacing.space10};
   background-color: ${colors.light400};
@@ -45,14 +45,17 @@ export const StyledContact = styled.div`
 
     #bug {
       color: #bb1e1e;
+      pointer-events: none;
     }
 
     #idea {
       color: #e9c60f;
+      pointer-events: none;
     }
 
     #feedback {
       color: #474141;
+      pointer-events: none;
     }
   }
 
@@ -87,6 +90,25 @@ export const StyledContact = styled.div`
       grid-template-areas:
         "name email"
         "message message";
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: ${spacing.space3} ${spacing.space5};
+    min-width: 60%;
+    max-width: 80%;
+
+    .feedback_category {
+      gap: ${spacing.space4};
+    }
+
+    .feedback_message {
+      form {
+        grid-template-areas:
+          "name"
+          "email"
+          "message";
+      }
     }
   }
 `;

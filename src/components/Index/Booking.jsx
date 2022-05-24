@@ -1,23 +1,11 @@
 import React from "react";
 import { BookingStyled } from "./Booking.styled";
+import Typeahead from "./Typeahead";
 
 const Booking = () => {
   return (
     <BookingStyled>
-      <form>
-        <div>
-          <input type="text" placeholder="Destination" />
-        </div>
-        <div>
-          <input type="text" placeholder="Check-In" />
-        </div>
-        <div>
-          <input type="text" placeholder="Check-Out" />
-        </div>
-        <div>
-          <input type="text" placeholder="Travellers" />
-        </div>
-      </form>
+      <Typeahead />
     </BookingStyled>
   );
 };

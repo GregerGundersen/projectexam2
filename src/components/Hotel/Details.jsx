@@ -17,7 +17,7 @@ const Details = () => {
 
   if (isLoading) {
     return (
-      <div>
+      <div className="temporary_centered">
         <img src={spinner} alt="A spinning loading indicator" />
       </div>
     );

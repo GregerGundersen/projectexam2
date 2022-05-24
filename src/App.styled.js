@@ -38,20 +38,18 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: ${fonts.Raleway};
-           }
+    }
 
-           body{
-               background-color: ${colors.bgColor};
-               min-height: 50vh ;
-           }
-
-          
-
-    /* h1,h2,h3,h4,h5 {
-               font-family: ${fonts.Raleway};
-           }
-
-    p,span,a{
-               font-family: ${fonts.Alice};
-           } */
+  body{
+        background-color: ${colors.bgColor};
+      min-height: 50vh ;
+      }
+.temporary_centered{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100vw;
+}
 `;

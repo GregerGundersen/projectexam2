@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import { spacing } from "../../App.styled";
+import hero from "../../media/hotel_header.jpg";
 
 export const HeroStyled = styled.header`
-  width: 100vw;
-  height: 60vh;
+  width: 100%;
+  height: 70vh;
   position: relative;
-
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+  background-image: url(${hero});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

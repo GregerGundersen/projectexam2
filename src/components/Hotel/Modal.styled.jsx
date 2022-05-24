@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { spacing } from "../../App.styled";
+import { spacing, colors } from "../../App.styled";
 
 export const StyledModal = styled.div`
   .modal_background {
@@ -25,7 +25,8 @@ export const StyledModal = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20%;
+    min-width: 30%;
+    max-width: 80%;
     min-height: 30%;
     background: white;
     z-index: 10;
@@ -34,6 +35,7 @@ export const StyledModal = styled.div`
 
     h2 {
       margin-bottom: ${spacing.space2};
+      font-weight: 400;
     }
 
     form {
@@ -46,7 +48,25 @@ export const StyledModal = styled.div`
         border-radius: 5px;
         padding: ${spacing.space1};
         border: 1px solid black;
+        resize: none;
+        max-width: 100%;
+
+        &:focus {
+          outline: 1px solid ${colors.green400};
+        }
       }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .modal {
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      min-width: 80%;
+      max-width: 80%;
+      padding: ${spacing.space1};
     }
   }
 `;

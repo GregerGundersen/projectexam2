@@ -20,10 +20,7 @@ export const InfoStyled = styled.div`
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: ${spacing.space8};
 
-    .imagecont {
-      padding-left: 10%;
-    }
-
+    .imagecont,
     .text {
       padding-left: 10%;
     }
@@ -71,6 +68,39 @@ export const InfoStyled = styled.div`
     p {
       font-family: ${fonts.Raleway};
       font-size: 16px;
+    }
+  }
+
+  /* Media queries */
+  @media screen and (max-width: 900px) {
+    .info_section__enjoy {
+      grid-template-columns: repeat(1, 1fr);
+
+      .text,
+      .imagecont {
+        padding-left: 0;
+      }
+    }
+
+    .info_section__hotel {
+      grid-template-columns: repeat(1, 1fr);
+
+      .imagecont {
+        /* grid-column: 1; */
+        grid-row: 1;
+      }
+
+      .text {
+        justify-self: start;
+        padding: 0;
+      }
+    }
+    .imagecont {
+      /* margin-bottom: ${spacing.space5}; */
+    }
+
+    .text {
+      margin-top: ${spacing.space5};
     }
   }
 `;

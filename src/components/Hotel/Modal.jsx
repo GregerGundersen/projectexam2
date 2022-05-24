@@ -1,8 +1,28 @@
 import React from "react";
 import { StyledModal } from "./Modal.styled";
-import { useState } from "react";
+import { apiUrl, apiBookings } from "../../utilities/api";
+import axios from "axios";
 
 const Modal = ({ setIsOpen }) => {
+  const handleBooking = async (event) => {
+    event.preventDefault();
+
+    const name = event.target.elements.name.value;
+    const email = event.target.elements.email.value;
+    const message = event.target.elements.message.value;
+
+    const options = {
+      data: {
+        name: name,
+        email: email,
+        bookingrequest: message,
+      },
+    };
+    const responseData = await axios.post(apiUrl + apiBookings, options);
+    setIsOpen(false);
+    console.log(responseData);
+  };
+
   return (
     <StyledModal>
       <div
@@ -13,14 +33,7 @@ const Modal = ({ setIsOpen }) => {
       ></div>
       <div className="modal">
         <h2>Booking</h2>
-        {/* <button
-          onClick={() => {
-            setIsOpen(false);
-          }}
-        >
-          x
-        </button> */}
-        <form>
+        <form onSubmit={handleBooking}>
           <input type="text" id="name" name="name" placeholder="Full name" />
           <input type="email" id="email" name="email" placeholder="E-Mail" />
           <textarea
