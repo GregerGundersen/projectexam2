@@ -1,18 +1,14 @@
 import React from "react";
 import { StyledLogIn } from "./AdminLogIn.styled";
 import { VscDebugBreakpointLog } from "react-icons/vsc";
-import { useContext } from "react";
-import { Navigate } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
 import { apiUrl, apiAuth } from "../../utilities/api";
 import axios from "axios";
+import AuthContext from "../../context/AuthContext";
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
 
 const AdminLogIn = () => {
   const [auth, setAuth] = useContext(AuthContext);
-
-  if (auth) {
-    return <Navigate to="/admin/" />;
-  }
 
   // Gets data from input fields and handles login request.
   const handleLogIn = async (event) => {
