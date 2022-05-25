@@ -8,10 +8,10 @@ import AuthContext from "../../context/AuthContext";
 import spinner from "../../media/Spinner-1s-200px.svg";
 
 const Bookings = () => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   // Fetch bookings
-  const { isLoading, error, data } = useQuery("data", () =>
+  const { isLoading, error, data } = useQuery("bookings", () =>
     axios
       .get(apiUrl + apiBookings, {
         headers: {
@@ -42,10 +42,13 @@ const Bookings = () => {
       <h2>Bookings</h2>
       <div className="bookings_container">
         {data.map((booking, idx) => {
+          // console.log(booking.attributes.bookingrequest);
           return (
             <div key={idx} className="booking_container__item">
-              <h3>{booking.attributes.name}</h3>
-              <p>{booking.attributes.email}</p>
+              <div className="booking_container__flex">
+                <h3>{booking.attributes.name}</h3>
+                <p>{booking.attributes.email}</p>
+              </div>
               <p>{booking.attributes.bookingrequest}</p>
             </div>
           );

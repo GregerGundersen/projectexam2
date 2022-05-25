@@ -11,7 +11,11 @@ const Feedback = () => {
   const [auth, setAuth] = useContext(AuthContext);
 
   // Fetch feedback
-  const { isLoading, error, data } = useQuery("data", () =>
+  const {
+    isLoading: isLoadingFeedback,
+    error: errorFeedback,
+    data: dataFeedback,
+  } = useQuery("feedbacks", () =>
     axios
       .get(apiUrl + apiFeedbacks, {
         headers: {
@@ -21,7 +25,7 @@ const Feedback = () => {
       .then((res) => res.data.data)
   );
 
-  if (isLoading) {
+  if (isLoadingFeedback) {
     return (
       <StyledFeedback>
         <img src={spinner} alt="Loading indicator" />
@@ -29,14 +33,32 @@ const Feedback = () => {
     );
   }
 
-  if (error) {
+  if (errorFeedback) {
     return (
       <StyledFeedback>
-        <p>{error.message}</p>
+        <p>{errorFeedback.message}</p>
       </StyledFeedback>
     );
   }
-  return <StyledFeedback>Feedback</StyledFeedback>;
+  return (
+    <StyledFeedback>
+      <h2>Feedback</h2>
+      <div className="feedback_container">
+        {console.log(dataFeedback)}
+        {dataFeedback.map((feedback, idx) => {
+          return (
+            <div key={idx} className="feedback_container__item">
+              <div className="feedback_container__flex">
+                <h3>{feedback.attributes.name}</h3>
+                <p>{feedback.attributes.email}</p>
+              </div>
+              <p>{feedback.attributes.feedback}</p>
+            </div>
+          );
+        })}
+      </div>
+    </StyledFeedback>
+  );
 };
 
 export default Feedback;

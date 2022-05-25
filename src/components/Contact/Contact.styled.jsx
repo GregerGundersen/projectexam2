@@ -68,7 +68,6 @@ export const StyledContact = styled.div`
 
     input:focus {
       outline: 1px solid ${colors.green400};
-      /* outline-offset: 12px; */
     }
 
     #email {
