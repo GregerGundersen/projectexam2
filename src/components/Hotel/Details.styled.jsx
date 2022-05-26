@@ -8,9 +8,14 @@ export const StyledDetails = styled.div`
 
   .hotel_image {
     width: 100%;
-    height: 50vh;
-    border: 1px solid red;
+    height: 60vh;
     grid-column: 1/3;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .hotel_info {

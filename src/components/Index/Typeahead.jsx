@@ -45,8 +45,8 @@ const Typeahead = () => {
           suggestions.map((suggestion, idx) => {
             console.log(suggestion);
             return (
-              <li>
-                <StyledLink to={`/hotel?id=${suggestion.id}`} key={idx}>
+              <li key={idx}>
+                <StyledLink to={`/hotel?id=${suggestion.id}`}>
                   {suggestion.attributes.name}
                 </StyledLink>
               </li>

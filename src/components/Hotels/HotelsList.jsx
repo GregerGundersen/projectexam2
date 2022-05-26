@@ -22,7 +22,7 @@ const HotelsList = () => {
   );
 
   // Fetch hotels
-  const { isLoading, error, data } = useQuery("data", () =>
+  const { isLoading, error, data } = useQuery("hotels", () =>
     fetch(apiUrl + apiHotels + "?" + paginationQuery).then((res) => res.json())
   );
 
@@ -168,7 +168,9 @@ const HotelsList = () => {
         {data.data.map((hotel, idx) => {
           return (
             <div key={idx} className="hotel">
-              <div className="hotel_image"></div>
+              <div className="hotel_image">
+                <img src={hotel.attributes.imgsrc} alt="Image of the hotel" />
+              </div>
               <div className="hotel_info">
                 <h2>{hotel.attributes.name}</h2>
                 <p className="hotel_info__location">

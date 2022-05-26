@@ -3,6 +3,7 @@ import { NavigationStyled } from "./Navigation.styled";
 import { LinkStyled } from "./Navigation.styled";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
+import { StyledHeaderLink } from "./Navigation.styled";
 
 const Navigation = () => {
   // Mobile navigation toggler
@@ -22,10 +23,10 @@ const Navigation = () => {
 
   return (
     <NavigationStyled>
-      <div className="navigation_left">
+      <StyledHeaderLink to="/" className="navigation_left">
         <h1 className="navigation_left__name">Holidaze</h1>
         <h3 className="navigation_left__title">Hotels & Vacations</h3>
-      </div>
+      </StyledHeaderLink>
       <div className="mobile_nav">
         <GiHamburgerMenu onClick={isOpenHandler} />
       </div>

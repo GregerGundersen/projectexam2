@@ -34,7 +34,9 @@ const Details = () => {
 
   return (
     <StyledDetails>
-      <div className="hotel_image"></div>
+      <div className="hotel_image">
+        <img src={data.data.attributes.imgsrc} alt="Image of the hotel" />
+      </div>
       <div className="hotel_info">
         <h2>{data.data.attributes.name}</h2>
         <span>{data.data.attributes.location}</span>

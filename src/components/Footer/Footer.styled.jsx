@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { spacing, colors, fonts } from "../../App.styled";
+import { Link } from "react-router-dom";
 
 export const FooterStyled = styled.footer`
   margin-top: ${spacing.space8};
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: ${spacing.space4};
 
   .footer_logo {
@@ -77,5 +79,19 @@ export const FooterStyled = styled.footer`
       gap: ${spacing.space10};
       margin-bottom: ${spacing.space10};
     }
+  }
+`;
+
+export const StyledFooterLogo = styled(Link)`
+  text-decoration: none;
+  h2 {
+    color: ${colors.green600};
+    font-weight: 300;
+    font-size: 40px;
+  }
+  h3 {
+    color: ${colors.dark400};
+    font-weight: 200;
+    font-size: 20px;
   }
 `;

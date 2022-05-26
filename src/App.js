@@ -1,6 +1,6 @@
 import { GlobalStyle } from "./App.styled";
 import { AuthProvider } from "./context/AuthContext";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Hotels from "./pages/Hotels";

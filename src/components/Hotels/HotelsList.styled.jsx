@@ -85,7 +85,12 @@ export const StyledHotelsList = styled.div`
     .hotel_image {
       width: 100px;
       height: 100px;
-      border: 1px solid red;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .hotel_info {

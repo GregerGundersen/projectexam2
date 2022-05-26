@@ -44,7 +44,6 @@ const Feedback = () => {
     <StyledFeedback>
       <h2>Feedback</h2>
       <div className="feedback_container">
-        {console.log(dataFeedback)}
         {dataFeedback.map((feedback, idx) => {
           return (
             <div key={idx} className="feedback_container__item">

@@ -14,21 +14,6 @@ export const NavigationStyled = styled.div`
     text-decoration-color: ${colors.green400};
   }
 
-  .navigation_left {
-    grid-column: 1 / span 1;
-  }
-
-  .navigation_left__name {
-    color: ${colors.green600};
-    font-weight: 300;
-    font-size: 40px;
-  }
-  .navigation_left__title {
-    color: ${colors.dark400};
-    font-weight: 200;
-    font-size: 20px;
-  }
-
   .navigation_right {
     grid-column: 2 / span 1;
   }
@@ -81,4 +66,20 @@ export const LinkStyled = styled(Link)`
   font-weight: 300;
   padding: ${spacing.space1} ${spacing.space2};
   text-decoration: none;
+`;
+
+export const StyledHeaderLink = styled(Link)`
+  grid-column: 1 / span 1;
+  text-decoration: none;
+
+  .navigation_left__name {
+    color: ${colors.green600};
+    font-weight: 300;
+    font-size: 40px;
+  }
+  .navigation_left__title {
+    color: ${colors.dark400};
+    font-weight: 200;
+    font-size: 20px;
+  }
 `;
