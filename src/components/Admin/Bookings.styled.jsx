@@ -17,6 +17,7 @@ export const BookingStyled = styled.div`
 
   .bookings_container {
     overflow: scroll;
+    max-height: 80vh;
 
     .booking_container__item {
       border-bottom: 1px solid ${colors.green400};
