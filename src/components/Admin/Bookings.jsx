@@ -24,7 +24,10 @@ const Bookings = () => {
   if (isLoading) {
     return (
       <BookingStyled>
-        <img src={spinner} alt="Loading indicator" />
+        <h2>Bookings</h2>
+        <div className="temporary_centered">
+          <img src={spinner} alt="Loading indicator" />
+        </div>
       </BookingStyled>
     );
   }
@@ -32,7 +35,13 @@ const Bookings = () => {
   if (error) {
     return (
       <BookingStyled>
-        <p>{error.message}</p>
+        <h2>Bookings</h2>
+        <div className="temporary_centered" id="error">
+          <p>
+            An error has occurred, please try again later or contact support.
+          </p>
+          <p>{error.message}</p>
+        </div>
       </BookingStyled>
     );
   }

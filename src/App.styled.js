@@ -50,6 +50,20 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    width: 100vw;
+    width: 100%;
 }
+
+  /* Error and loading styles */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(10%);
+      opacity: 0;
+      scale: 0.75;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      scale: 1;
+    }
+  }
 `;

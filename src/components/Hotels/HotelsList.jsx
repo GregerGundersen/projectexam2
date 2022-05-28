@@ -26,6 +26,10 @@ const HotelsList = () => {
     fetch(apiUrl + apiHotels + "?" + paginationQuery).then((res) => res.json())
   );
 
+  const filterHandler = (event) => {
+    console.log("Toggled: ", event.target.checked);
+  };
+
   // Set all usual content with loading indicator
   if (isLoading)
     return (
@@ -34,7 +38,7 @@ const HotelsList = () => {
           <div>
             <h3>Location</h3>
             <div className="hotels_filters__location">
-              <input type="checkbox" id="sentrum" name="sentrum" />
+              <input type="checkbox" id="sentrum" name="Bergen Sentrum" />
               <label htmlFor="sentrum">Bergen Sentrum</label>
             </div>
             <div className="hotels_filters__location">
@@ -131,7 +135,12 @@ const HotelsList = () => {
         <div>
           <h3>Location</h3>
           <div className="hotels_filters__location">
-            <input type="checkbox" id="sentrum" name="sentrum" />
+            <input
+              onChange={filterHandler}
+              type="checkbox"
+              id="sentrum"
+              name="sentrum"
+            />
             <label htmlFor="sentrum">Bergen Sentrum</label>
           </div>
           <div className="hotels_filters__location">

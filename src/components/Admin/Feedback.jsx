@@ -28,7 +28,10 @@ const Feedback = () => {
   if (isLoadingFeedback) {
     return (
       <StyledFeedback>
-        <img src={spinner} alt="Loading indicator" />
+        <h2>Feedback</h2>
+        <div className="temporary_centered">
+          <img src={spinner} alt="Loading indicator" />
+        </div>
       </StyledFeedback>
     );
   }
@@ -36,7 +39,13 @@ const Feedback = () => {
   if (errorFeedback) {
     return (
       <StyledFeedback>
-        <p>{errorFeedback.message}</p>
+        <h2>Feedback</h2>
+        <div className="temporary_centered" id="error">
+          <p>
+            An error has occurred, please try again later or contact support.
+          </p>
+          <p>{errorFeedback.message}</p>
+        </div>
       </StyledFeedback>
     );
   }

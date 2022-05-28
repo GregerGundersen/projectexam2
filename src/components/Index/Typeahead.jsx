@@ -26,7 +26,6 @@ const Typeahead = () => {
         return hotel.attributes.name.match(regex);
       });
     }
-    console.log(matches);
     setSuggestions(matches);
     setText(text);
   };
@@ -43,7 +42,6 @@ const Typeahead = () => {
       <ul className="typeahead_suggestion__list">
         {suggestions &&
           suggestions.map((suggestion, idx) => {
-            console.log(suggestion);
             return (
               <li key={idx}>
                 <StyledLink to={`/hotel?id=${suggestion.id}`}>

@@ -28,5 +28,23 @@ export const StyledNewEstablishment = styled.div`
         outline: 1px solid ${colors.green400};
       }
     }
+
+    button {
+      width: 6rem;
+      height: 3rem;
+      border: none;
+      background-color: ${colors.green400};
+      color: white;
+      align-self: end;
+      cursor: pointer;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
   }
 `;

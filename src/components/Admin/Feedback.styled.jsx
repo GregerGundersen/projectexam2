@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { spacing, colors } from "../../App.styled";
+import { spacing, colors, fonts } from "../../App.styled";
 
 export const StyledFeedback = styled.div`
   min-width: 40%;
@@ -13,6 +13,22 @@ export const StyledFeedback = styled.div`
   img {
     width: 100px;
     height: 100px;
+  }
+
+  .temporary_centered {
+    p {
+      color: red;
+      font-family: ${fonts.Raleway};
+      margin: ${spacing.space1};
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  #error {
+    animation: 0.35s ease-out 0s 1 slideUp;
   }
 
   .feedback_container {
