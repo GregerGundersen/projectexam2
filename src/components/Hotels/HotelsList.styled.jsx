@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { spacing, colors, fonts } from "../../App.styled";
+import { Link } from "react-router-dom";
 
 export const StyledHotelsList = styled.div`
   margin: 10vh ${spacing.space13};
@@ -70,9 +71,10 @@ export const StyledHotelsList = styled.div`
     max-width: 50vw;
 
     .hotel {
-      display: flex;
-      justify-content: space-between;
-      gap: ${spacing.space4};
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: ${spacing.space3};
       margin: ${spacing.space4} 0;
       padding: ${spacing.space2};
       transition: 0.2s ease-in-out;
@@ -83,8 +85,8 @@ export const StyledHotelsList = styled.div`
     }
 
     .hotel_image {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      margin: auto;
 
       img {
         object-fit: cover;
@@ -94,7 +96,7 @@ export const StyledHotelsList = styled.div`
     }
 
     .hotel_info {
-      width: 80%;
+      width: 100%;
 
       h2 {
         color: ${colors.green400};
@@ -109,5 +111,46 @@ export const StyledHotelsList = styled.div`
         margin: 5px 0 10px 0;
       }
     }
+  }
+  @media screen and (max-width: 1000px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 10vh ${spacing.space7};
+
+    .hotels_filters {
+      display: flex;
+      margin: auto;
+      gap: ${spacing.space4};
+    }
+
+    .hotels {
+      max-width: 100%;
+
+      .hotel {
+        grid-template-columns: repeat(1, 1fr);
+
+        .hotel_image {
+          height: 200px;
+        }
+      }
+    }
+  }
+`;
+
+export const StyledHotelLink = styled(Link)`
+  align-self: end;
+  justify-self: end;
+
+  button {
+    background-color: ${colors.green400};
+    padding: ${spacing.space1} ${spacing.space2};
+    border: none;
+    cursor: pointer;
+    color: white;
+    width: 15ch;
+  }
+
+  @media screen and (min-width: 1000px) {
+    grid-column: 1 / span 2;
   }
 `;

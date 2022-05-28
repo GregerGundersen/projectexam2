@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { apiUrl, apiHotels } from "../../utilities/api";
 import { StyledHotelsList } from "./HotelsList.styled";
-import { Link } from "react-router-dom";
+import { StyledHotelLink } from "./HotelsList.styled";
 import spinner from "../../media/Spinner-1s-200px.svg";
 // import { BiCheckbox } from "react-icons/bi";
 const qs = require("qs");
@@ -178,7 +178,9 @@ const HotelsList = () => {
                 </p>
                 <p>{hotel.attributes.description}</p>
               </div>
-              <Link to={`/hotel?id=${hotel.id}`}>See more</Link>
+              <StyledHotelLink to={`/hotel?id=${hotel.id}`}>
+                <button>See more</button>
+              </StyledHotelLink>
             </div>
           );
         })}
