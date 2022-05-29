@@ -8,7 +8,7 @@ import AuthContext from "../../context/AuthContext";
 import spinner from "../../media/Spinner-1s-200px.svg";
 
 const Feedback = () => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   // Fetch feedback
   const {

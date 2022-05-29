@@ -70,8 +70,6 @@ const HotelsList = () => {
               <label htmlFor="hostel">Hostel</label>
             </div>
           </div>
-          {/* <label for="results">Results per page</label>
-          <input type="range" min="3" max="15" id="results" name="results" /> */}
         </div>
         <div className="temporary_centered">
           <img src={spinner} alt="A spinning loading indicator" />
@@ -178,7 +176,7 @@ const HotelsList = () => {
           return (
             <div key={idx} className="hotel">
               <div className="hotel_image">
-                <img src={hotel.attributes.imgsrc} alt="Image of the hotel" />
+                <img src={hotel.attributes.imgsrc} alt="Hotel exterior" />
               </div>
               <div className="hotel_info">
                 <h2>{hotel.attributes.name}</h2>

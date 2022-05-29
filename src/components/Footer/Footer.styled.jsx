@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { spacing, colors, fonts } from "../../App.styled";
+import { spacing, colors } from "../../App.styled";
 import { Link } from "react-router-dom";
 
 export const FooterStyled = styled.footer`
@@ -27,8 +27,7 @@ export const FooterStyled = styled.footer`
     justify-content: space-around;
     gap: ${spacing.space8};
     h2 {
-      font-family: ${fonts.Alice};
-      font-weight: 200;
+      font-weight: 300;
     }
 
     .footer_links__contact__socials {

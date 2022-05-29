@@ -6,42 +6,65 @@ import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { logIn } from "../../utilities/schemas";
+import { useMutation } from "react-query";
 
 const AdminLogIn = () => {
   const [auth, setAuth] = useContext(AuthContext);
-
-  // Gets data from input fields and handles login request.
-  const handleLogIn = async (event) => {
-    event.preventDefault();
-
-    const id = event.target.elements.email.value;
-    const pw = event.target.elements.password.value;
-
-    const responseData = await axios.post(apiUrl + apiAuth, {
-      identifier: id,
-      password: pw,
-    });
-    console.log(responseData);
-    if (responseData.status === 200) {
-      setAuth(responseData.data.jwt);
-      return <Navigate to="/admin/" />;
-    }
+  const addLogIn = (logIn) => {
+    return axios.post(apiUrl + apiAuth, logIn);
   };
+
+  const useAddLogInData = () => {
+    return useMutation(addLogIn, {
+      onSuccess: (data) => {
+        setAuth(data.data.jwt);
+        return <Navigate to="/admin/" />;
+      },
+    });
+  };
+  const { mutate, isSuccess, isError } = useAddLogInData();
+
+  const onSubmit = (formData) => {
+    mutate({
+      identifier: formData.identifier,
+      password: formData.password,
+    });
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(logIn),
+  });
 
   return (
     <StyledLogIn>
       <div className="login_container">
         <div className="login_form">
           <h1>Log in</h1>
-          <form onSubmit={handleLogIn}>
-            <input type="email" id="email" name="email" placeholder="E-Mail" />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="E-Mail"
+              {...register("identifier")}
+            />
+            {errors.identifier && <span>{errors.identifier.message}</span>}
             <input
               type="password"
               id="password"
               name="password"
               placeholder="Password"
+              {...register("password")}
             />
-            <button>Log in</button>
+            {errors.password && <span>{errors.password.message}</span>}
+            <button type="submit">Log in</button>
           </form>
         </div>
         <div className="login_info">
@@ -60,6 +83,13 @@ const AdminLogIn = () => {
               Create and edit establishments in the database.
             </li>
           </ul>
+        </div>
+        <div
+          className={
+            isSuccess ? "message success" : isError ? "message error" : null
+          }
+        >
+          {isSuccess ? "Logging in" : isError ? "An error occured" : null}
         </div>
       </div>
     </StyledLogIn>

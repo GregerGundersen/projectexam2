@@ -6,6 +6,7 @@ export const StyledNewEstablishment = styled.div`
   padding: ${spacing.space2};
   background-color: ${colors.light400};
   grid-column: 1 / span 1;
+  transition: 1s;
 
   h2 {
     font-weight: 400;
@@ -38,13 +39,21 @@ export const StyledNewEstablishment = styled.div`
       align-self: end;
       cursor: pointer;
     }
+  }
 
-    .success {
-      color: green;
-    }
+  .message {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: ${spacing.space1};
+    transition: 1s;
+  }
 
-    .error {
-      color: red;
-    }
+  .error {
+    background-color: red;
+  }
+
+  .success {
+    background-color: green;
   }
 `;

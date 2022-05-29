@@ -5,17 +5,21 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { booking } from "../../utilities/schemas";
+import { useMutation } from "react-query";
 
 const Modal = ({ setIsOpen }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(booking),
-  });
+  // Handles form submission and sends data to API.
+  const addBooking = (booking) => {
+    return axios.post(apiUrl + apiBookings, booking);
+  };
 
-  const onSubmit = async (formData) => {
+  const useAddBookingData = () => {
+    return useMutation(addBooking);
+  };
+
+  const { mutate, isSuccess, isError } = useAddBookingData();
+
+  const onSubmit = (formData) => {
     const options = {
       data: {
         name: formData.name,
@@ -23,10 +27,19 @@ const Modal = ({ setIsOpen }) => {
         bookingrequest: formData.bookingRequest,
       },
     };
-    const responseData = await axios.post(apiUrl + apiBookings, options);
-    setIsOpen(false);
-    console.log(responseData);
+    mutate(options);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 1500);
   };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(booking),
+  });
 
   return (
     <StyledModal>
@@ -67,6 +80,13 @@ const Modal = ({ setIsOpen }) => {
           )}
           <button>Book</button>
         </form>
+        <div
+          className={
+            isSuccess ? "message success" : isError ? "message error" : null
+          }
+        >
+          {isSuccess ? "Booking complete" : isError ? "An error occured" : null}
+        </div>
       </div>
     </StyledModal>
   );

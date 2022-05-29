@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { spacing, colors, fonts } from "../../App.styled";
+import { spacing, colors } from "../../App.styled";
 
 export const StyledFeedback = styled.div`
   min-width: 40%;
@@ -18,7 +18,6 @@ export const StyledFeedback = styled.div`
   .temporary_centered {
     p {
       color: red;
-      font-family: ${fonts.Raleway};
       margin: ${spacing.space1};
     }
 

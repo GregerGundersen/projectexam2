@@ -56,6 +56,22 @@ export const StyledModal = styled.div`
         }
       }
     }
+
+    .message {
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: ${spacing.space1};
+      transition: 1s;
+    }
+
+    .error {
+      background-color: red;
+    }
+
+    .success {
+      background-color: green;
+    }
   }
 
   @media screen and (max-width: 900px) {

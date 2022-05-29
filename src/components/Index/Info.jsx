@@ -6,7 +6,7 @@ import { InfoStyled } from "./Info.styled";
 const Info = () => {
   return (
     <InfoStyled className="info">
-      <h2 className="info__title">Stress-free booking</h2>
+      <h1 className="info__title">Stress-free booking</h1>
       <div className="info_section__enjoy">
         <div className="imagecont">
           <img src={door} alt="Hand opening door to hotel room" />

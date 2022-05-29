@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, spacing, fonts } from "../../App.styled";
+import { colors, spacing } from "../../App.styled";
 
 export const BookingStyled = styled.div`
   min-width: 40%;
@@ -18,7 +18,6 @@ export const BookingStyled = styled.div`
   .temporary_centered {
     p {
       color: red;
-      font-family: ${fonts.Raleway};
       margin: ${spacing.space1};
     }
 

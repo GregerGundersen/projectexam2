@@ -8,15 +8,28 @@ export const StyledLogIn = styled.div`
   align-items: center;
 
   .login_container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: ${spacing.space4};
-    min-width: 40vw;
-    min-height: 30vh;
-    background-color: #fcfcfc;
+    gap: ${spacing.space7};
+    padding: ${spacing.space5};
+    background-color: ${colors.light400};
     border-radius: 15px;
     transition: 0.25s;
+
+    .message {
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: ${spacing.space1};
+      transition: 1s;
+      grid-column: 1 / span 2;
+    }
+
+    .error {
+      background-color: red;
+    }
 
     &:focus-within {
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -33,6 +46,19 @@ export const StyledLogIn = styled.div`
         flex-direction: column;
         gap: ${spacing.space1};
 
+        input,
+        textarea {
+          border-radius: 5px;
+          border: 1px solid black;
+          padding: 5px;
+          resize: none;
+        }
+
+        input:focus,
+        textarea:focus {
+          outline: 1px solid ${colors.green400};
+        }
+
         button {
           background-color: ${colors.green400};
           color: #fcfcfc;
@@ -40,6 +66,7 @@ export const StyledLogIn = styled.div`
           width: 50%;
           padding: ${spacing.space1};
           cursor: pointer;
+          align-self: flex-end;
         }
       }
     }
@@ -57,6 +84,15 @@ export const StyledLogIn = styled.div`
             color: ${colors.green400};
           }
         }
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .login_container {
+      grid-template-columns: repeat(1, 1fr);
+
+      .message {
+        grid-column: 1 / span 1;
       }
     }
   }

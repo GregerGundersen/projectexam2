@@ -31,3 +31,8 @@ export const booking = yup.object().shape({
     .email("Must be a valid e-mail"),
   bookingRequest: yup.string().required("Message is required."),
 });
+
+export const logIn = yup.object().shape({
+  identifier: yup.string().required("E-Mail is required"),
+  password: yup.string().required("Password is required"),
+});

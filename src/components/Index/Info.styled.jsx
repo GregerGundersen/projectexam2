@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import { spacing, fonts, colors } from "../../App.styled";
+import { spacing, colors } from "../../App.styled";
 
 export const InfoStyled = styled.div`
   margin: 25vh ${spacing.space13};
   h1,
   h2,
   h3 {
-    font-family: ${fonts.Alice};
-    font-weight: 200;
+    font-weight: 300;
   }
 
   .info__title {
@@ -44,9 +43,6 @@ export const InfoStyled = styled.div`
   }
 
   .imagecont {
-    /* width: 40vw;
-    height: 25vw; */
-    /* padding: 0 10%; */
     width: 100%;
     height: 100%;
     img {
@@ -66,13 +62,13 @@ export const InfoStyled = styled.div`
     }
 
     p {
-      font-family: ${fonts.Raleway};
       font-size: 16px;
     }
   }
 
   /* Media queries */
   @media screen and (max-width: 900px) {
+    margin: 25vh ${spacing.space7};
     .info_section__enjoy {
       grid-template-columns: repeat(1, 1fr);
 
@@ -86,7 +82,6 @@ export const InfoStyled = styled.div`
       grid-template-columns: repeat(1, 1fr);
 
       .imagecont {
-        /* grid-column: 1; */
         grid-row: 1;
       }
 
@@ -94,9 +89,6 @@ export const InfoStyled = styled.div`
         justify-self: start;
         padding: 0;
       }
-    }
-    .imagecont {
-      /* margin-bottom: ${spacing.space5}; */
     }
 
     .text {
