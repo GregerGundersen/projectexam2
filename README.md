@@ -1,4 +1,4 @@
-##Credentials
+**Credentials**
 
-Identifier: admin@holidaze.com
-Password: holidazeadmin
+- Identifier: admin@holidaze.com 
+- Password: holidazeadmin
