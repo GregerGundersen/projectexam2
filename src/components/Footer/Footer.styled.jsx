@@ -10,11 +10,10 @@ export const FooterStyled = styled.footer`
   }
 
   .footer_wrapper {
-    margin-top: ${spacing.space8};
+    margin-top: ${spacing.space2};
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    padding: ${spacing.space4};
+    padding: ${spacing.space2};
   }
 
   .footer_logo {

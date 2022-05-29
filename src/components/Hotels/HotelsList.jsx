@@ -15,43 +15,6 @@ const HotelsList = () => {
   if (isLoading)
     return (
       <StyledHotelsList>
-        <div className="hotels_filters">
-          <div>
-            <h3>Location</h3>
-            <div className="hotels_filters__location">
-              <input type="checkbox" id="sentrum" name="Bergen Sentrum" />
-              <label htmlFor="sentrum">Bergen Sentrum</label>
-            </div>
-            <div className="hotels_filters__location">
-              <input type="checkbox" id="årstad" name="årstad" />
-              <label htmlFor="årstad">Årstad</label>
-            </div>
-            <div className="hotels_filters__location">
-              <input type="checkbox" id="sted" name="sted" />
-              <label htmlFor="sted">Location</label>
-            </div>
-          </div>
-
-          <div>
-            <h3>Accommodation</h3>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="hotel" name="hotel" />
-              <label htmlFor="hotel">Hotel</label>
-            </div>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="b&b" name="b&b" />
-              <label htmlFor="b&b">B&B</label>
-            </div>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="apartment" name="apartment" />
-              <label htmlFor="apartment">Apartment</label>
-            </div>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="hostel" name="hostel" />
-              <label htmlFor="hostel">Hostel</label>
-            </div>
-          </div>
-        </div>
         <div className="temporary_centered">
           <img src={spinner} alt="A spinning loading indicator" />
         </div>
@@ -62,43 +25,6 @@ const HotelsList = () => {
   if (error)
     return (
       <StyledHotelsList>
-        <div className="hotels_filters">
-          <div>
-            <h3>Location</h3>
-            <div className="hotels_filters__location">
-              <input type="checkbox" id="sentrum" name="sentrum" />
-              <label htmlFor="sentrum">Bergen Sentrum</label>
-            </div>
-            <div className="hotels_filters__location">
-              <input type="checkbox" id="årstad" name="årstad" />
-              <label htmlFor="årstad">Årstad</label>
-            </div>
-            <div className="hotels_filters__location">
-              <input type="checkbox" id="sted" name="sted" />
-              <label htmlFor="sted">Location</label>
-            </div>
-          </div>
-
-          <div>
-            <h3>Accommodation</h3>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="hotel" name="hotel" />
-              <label htmlFor="hotel">Hotel</label>
-            </div>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="b&b" name="b&b" />
-              <label htmlFor="b&b">B&B</label>
-            </div>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="apartment" name="apartment" />
-              <label htmlFor="apartment">Apartment</label>
-            </div>
-            <div className="hotels_filters__accommodation">
-              <input type="checkbox" id="hostel" name="hostel" />
-              <label htmlFor="hostel">Hostel</label>
-            </div>
-          </div>
-        </div>
         <div className="temporary_centered" id="error">
           <p>
             An error has occurred, please try again later or contact support.
@@ -110,43 +36,6 @@ const HotelsList = () => {
 
   return (
     <StyledHotelsList>
-      <div className="hotels_filters">
-        <div>
-          <h3>Location</h3>
-          <div className="hotels_filters__location">
-            <input type="checkbox" id="sentrum" name="Bergen Sentrum" />
-            <label htmlFor="sentrum">Bergen Sentrum</label>
-          </div>
-          <div className="hotels_filters__location">
-            <input type="checkbox" id="årstad" name="årstad" />
-            <label htmlFor="årstad">Årstad</label>
-          </div>
-          <div className="hotels_filters__location">
-            <input type="checkbox" id="sted" name="sted" />
-            <label htmlFor="sted">Location</label>
-          </div>
-        </div>
-
-        <div>
-          <h3>Accommodation</h3>
-          <div className="hotels_filters__accommodation">
-            <input type="checkbox" id="hotel" name="hotel" />
-            <label htmlFor="hotel">Hotel</label>
-          </div>
-          <div className="hotels_filters__accommodation">
-            <input type="checkbox" id="b&b" name="b&b" />
-            <label htmlFor="b&b">B&B</label>
-          </div>
-          <div className="hotels_filters__accommodation">
-            <input type="checkbox" id="apartment" name="apartment" />
-            <label htmlFor="apartment">Apartment</label>
-          </div>
-          <div className="hotels_filters__accommodation">
-            <input type="checkbox" id="hostel" name="hostel" />
-            <label htmlFor="hostel">Hostel</label>
-          </div>
-        </div>
-      </div>
       <div className="hotels">
         {data.data.map((hotel, idx) => {
           return (

@@ -36,7 +36,7 @@ const Footer = () => {
             <h2>Helpful Links</h2>
             <div className="footer_links__helpful__links">
               <Link to="/aboutus">About Us</Link>
-              <Link to="contact">Contact</Link>
+              <Link to="/contact">Contact</Link>
               <Link to={auth ? "/admin/" : "/login/"}>
                 {auth ? "Admin" : "Log In"}
               </Link>

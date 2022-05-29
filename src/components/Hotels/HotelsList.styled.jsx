@@ -45,27 +45,6 @@ export const StyledHotelsList = styled.div`
     animation: 0.35s ease-out 0s 1 slideUp;
   }
 
-  /* Filter styles */
-  .hotels_filters {
-    h3 {
-      color: ${colors.green400};
-      font-weight: 300;
-      margin: 15px 0 5px 0;
-    }
-
-    .hotels_filters__location,
-    .hotels_filters__accommodation {
-      display: flex;
-      margin: 8px 0;
-      gap: 10px;
-
-      label {
-        font-family: ${fonts.Raleway};
-        font-size: 16px;
-      }
-    }
-  }
-
   /* Hotel list styles */
   .hotels {
     max-width: 50vw;
@@ -116,12 +95,6 @@ export const StyledHotelsList = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     margin: 10vh ${spacing.space7};
-
-    .hotels_filters {
-      display: flex;
-      margin: auto;
-      gap: ${spacing.space4};
-    }
 
     .hotels {
       max-width: 100%;
