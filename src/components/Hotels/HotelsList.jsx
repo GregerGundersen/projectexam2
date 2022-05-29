@@ -4,31 +4,12 @@ import { apiUrl, apiHotels } from "../../utilities/api";
 import { StyledHotelsList } from "./HotelsList.styled";
 import { StyledHotelLink } from "./HotelsList.styled";
 import spinner from "../../media/Spinner-1s-200px.svg";
-// import { BiCheckbox } from "react-icons/bi";
-const qs = require("qs");
 
 const HotelsList = () => {
-  // Set pagination settings for hotel list fetch
-  const paginationQuery = qs.stringify(
-    {
-      pagination: {
-        page: 1,
-        pageSize: 5,
-      },
-    },
-    {
-      encodeValuesOnly: true,
-    }
-  );
-
   // Fetch hotels
   const { isLoading, error, data } = useQuery("hotels", () =>
-    fetch(apiUrl + apiHotels + "?" + paginationQuery).then((res) => res.json())
+    fetch(apiUrl + apiHotels).then((res) => res.json())
   );
-
-  const filterHandler = (event) => {
-    console.log("Toggled: ", event.target.checked);
-  };
 
   // Set all usual content with loading indicator
   if (isLoading)
@@ -133,12 +114,7 @@ const HotelsList = () => {
         <div>
           <h3>Location</h3>
           <div className="hotels_filters__location">
-            <input
-              onChange={filterHandler}
-              type="checkbox"
-              id="sentrum"
-              name="sentrum"
-            />
+            <input type="checkbox" id="sentrum" name="Bergen Sentrum" />
             <label htmlFor="sentrum">Bergen Sentrum</label>
           </div>
           <div className="hotels_filters__location">
@@ -191,6 +167,7 @@ const HotelsList = () => {
             </div>
           );
         })}
+        <div></div>
       </div>
     </StyledHotelsList>
   );

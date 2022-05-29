@@ -3,11 +3,19 @@ import { spacing, colors } from "../../App.styled";
 import { Link } from "react-router-dom";
 
 export const FooterStyled = styled.footer`
-  margin-top: ${spacing.space8};
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: ${spacing.space4};
+  hr {
+    color: ${colors.green400};
+    width: 60%;
+    margin: auto;
+  }
+
+  .footer_wrapper {
+    margin-top: ${spacing.space8};
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: ${spacing.space4};
+  }
 
   .footer_logo {
     h2 {
@@ -53,6 +61,21 @@ export const FooterStyled = styled.footer`
         margin-bottom: ${spacing.space2};
       }
 
+      p {
+        color: blue;
+      }
+
+      button {
+        * {
+          color: white;
+          text-decoration: none;
+        }
+      }
+
+      .hide {
+        display: none;
+      }
+
       .footer_links__helpful__links {
         display: flex;
         flex-direction: column;
@@ -69,9 +92,11 @@ export const FooterStyled = styled.footer`
   }
 
   @media screen and (max-width: 900px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
+    .footer_wrapper {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
 
     .footer_links {
       flex-direction: column;
